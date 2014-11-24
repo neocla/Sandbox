@@ -1,13 +1,12 @@
 //
 //  AppDelegate.m
-//  HelloWorld
+//  MoviewPlayerSample
 //
-//  Created by 松谷淳史 on 2014/08/14.
+//  Created by 松谷淳史 on 2014/11/23.
 //  Copyright (c) 2014年 Atsuhi Matsutani. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import <GoogleMaps/GoogleMaps.h>
 
 @interface AppDelegate ()
 
@@ -18,7 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [GMSServices provideAPIKey:@"AIzaSyBNAgTdDCyfKGVZaZ7QdwXUJT1mvXoQAN0"];
     return YES;
 }
 

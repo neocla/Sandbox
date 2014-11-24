@@ -7,13 +7,14 @@
 //
 
 #import "ViewController.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
-            
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -23,6 +24,24 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)loadView {
+    
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.8683
+                                                            longitude:151.2086
+                                                                 zoom:6];
+    self.mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    self.mapView.myLocationEnabled = YES;
+    self.view = self.mapView;
+    
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = camera.target;
+    marker.snippet = @"Hello World";
+    marker.appearAnimation = kGMSMarkerAnimationPop;
+    marker.map = self.mapView;
+    
+    self.view = self.mapView;
 }
 
 @end
